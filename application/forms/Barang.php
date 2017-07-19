@@ -15,6 +15,8 @@ class Application_Form_Barang extends Zend_Form
 			->setRequired(true)
 			->addFilter('StripTags')
 			->addFilter('StringTrim')
+                        ->setAttrib('maxLength',10)
+                        ->setAttrib('placeHolder','max 10 characters')
 			->addValidator('NotEmpty');
 
 	$nama_barang = new Zend_Form_Element_Text('nama_barang');
@@ -22,6 +24,8 @@ class Application_Form_Barang extends Zend_Form
 			->setRequired(true)
 			->addFilter('StripTags')
 			->addFilter('StringTrim')
+                        ->setAttrib('maxLength',30)
+                        ->setAttrib('placeHolder','max 30 characters')
 			->addValidator('NotEmpty');
 
 	$qty = new Zend_Form_Element_Text('quantity');
@@ -29,6 +33,7 @@ class Application_Form_Barang extends Zend_Form
 		->setRequired(true)
 		->addFilter('StripTags')
 		->addFilter('StringTrim')
+                ->setAttrib('type', 'number')
 		->addValidator('NotEmpty');
 
 	$harga = new Zend_Form_Element_Text('harga_barang');

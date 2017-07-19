@@ -25,13 +25,13 @@ $this->headTitle($this->title);
 <div id="demo"></div>
 <div class="row">
 <?php echo $this->form; ?>
-<button class="tambahkan">Tambah</button>
+    <button id="tambahkan" class="btn btn-success">Tambah</button>
 </div>
 </div>
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$(".tambahkan").click(function(){
+		$("#tambahkan").click(function(){
 			var data = $('#barang').serialize();
 			$.ajax({
 				type: 'POST',
